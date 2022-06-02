@@ -9,6 +9,7 @@ class Player:
         self.isOnFloor = True
         self.currentTime = int(t.time())
 
+        self.ceilingHeight = 20
         self.floorHeight = 800
         self.frames = 0
         self.ticks = 0
@@ -36,9 +37,9 @@ class Player:
         if self.rec.y > self.floorHeight:
             self.rec.y = self.floorHeight
 
-        if self.rec.y < 20:
-            self.yvelocity = 0.1
-            self.rec.y = 20
+        if self.rec.y < self.ceilingHeight:
+            self.yvelocity = 0
+            self.rec.y = self.ceilingHeight
 
         # fall
         if self.rec.y <= self.floorHeight:

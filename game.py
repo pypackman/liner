@@ -11,7 +11,9 @@ class Game:
     
     def main(self):
         player = Player(60, 60, 35, 90, p.RED)
-        plat = Platform(500, 400, 200, 35, p.LIGHTGRAY)
+        plat = Platform(500, 680, 200, 35, p.LIGHTGRAY)
+        plat2 = Platform(900, 450, 170, 35, p.LIGHTGRAY)
+        plat3 = Platform(200, 200, 300, 35, p.LIGHTGRAY)
         InitWindow(self.width, self.height, self.title)
         SetTargetFPS(self.fps)
 
@@ -19,10 +21,14 @@ class Game:
             # update
             player.Update()
             plat.Collision(player)
+            plat2.Collision(player)
+            plat3.Collision(player)
             BeginDrawing()
             ClearBackground(p.RAYWHITE) 
             player.Draw()
             plat.Draw()
+            plat2.Draw()
+            plat3.Draw()
             
             DrawText(bytes(f"xvelocity: {round(player.xvelocity, 2)}, yvelocity: {round(player.yvelocity, 2)}, x: {round(player.rec.x, 2)}, y: {round(player.rec.y,2)}", 'utf-8'), 30,30,15,p.LIGHTGRAY)
             DrawText(bytes(f"jump tick timer: {player.tickTimer} ticks: {player.ticks}",'utf-8'), 30,46,15,p.RED)
