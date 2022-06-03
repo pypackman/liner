@@ -1,37 +1,52 @@
+from object.platform import Platform
 import pyray as p
 from raylib import *
 import time as t
-from object.platform import Platform
 from character.player import Player
+
 class Game:
     def __init__(self, w, h, f): 
         self.width, self.height = w,h
-        self.fps = f
-        self.title = b"wow liner"
+        self.fps = 60
+        self.title = b"liner v1.0"
     
     def main(self):
-        player = Player(60, 60, 35, 90, p.RED)
-        plat = Platform(500, 680, 200, 35, p.LIGHTGRAY)
-        plat2 = Platform(900, 450, 170, 35, p.LIGHTGRAY)
-        plat3 = Platform(200, 200, 300, 35, p.LIGHTGRAY)
         InitWindow(self.width, self.height, self.title)
         SetTargetFPS(self.fps)
+        player = Player(60,60,40,100,p.GOLD)
+        floor = Platform(-350,900,2750,400,p.LIGHTGRAY)
+        platform = Platform(200, 650, 150, 20, p.BLACK)
+        platform2 = Platform(450, 450, 150, 20, p.BLACK)
+        platform3 = Platform(600, 250, 150, 20, p.BLACK)
+        camera = p.Camera2D()
+        camera.offset = self.width/2, self.height/2
+        camera.rotation = 0.0
+        camera.zoom = 1.1
 
         while not WindowShouldClose():
-            # update
             player.Update()
-            plat.Collision(player)
-            plat2.Collision(player)
-            plat3.Collision(player)
+            floor.Collision(player)
+            platform.Collision(player)
+            platform2.Collision(player)
+            platform3.Collision(player)
+
+
             BeginDrawing()
+            camera.target = player.rec.x+player.rec.width/2,player.rec.y+player.rec.width
             ClearBackground(p.RAYWHITE) 
+            DrawText(b"by easontek2398 and meowscripty", 30,32,15,p.BLUE)
+            DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 52, 15, p.RED)
+            #cam
+            BeginMode2D(camera)
+
+            DrawRectangle(234,356,23,23,p.RED)
             player.Draw()
-            plat.Draw()
-            plat2.Draw()
-            plat3.Draw()
-            
-            DrawText(bytes(f"xvelocity: {round(player.xvelocity, 2)}, yvelocity: {round(player.yvelocity, 2)}, x: {round(player.rec.x, 2)}, y: {round(player.rec.y,2)}", 'utf-8'), 30,30,15,p.LIGHTGRAY)
-            DrawText(bytes(f"jump tick timer: {player.tickTimer} ticks: {player.ticks}",'utf-8'), 30,46,15,p.RED)
-            DrawText(b"by easontek2398 and meowscripty", 30,62,15,p.BLUE)
+            floor.Draw()
+            platform.Draw()
+            platform2.Draw()
+            platform3.Draw()
+
+            EndMode2D()
+            #endcam
             EndDrawing()
  

@@ -9,8 +9,8 @@ class Player:
         self.isOnFloor = True
         self.currentTime = int(t.time())
 
-        self.ceilingHeight = 20
-        self.floorHeight = 800
+        self.ceilingHeight = 30
+        self.floorHeight = 2342
         self.frames = 0
         self.ticks = 0
         self.tickTimer = 0
@@ -26,14 +26,12 @@ class Player:
         self.frames += 1
         if self.frames % 6 == 0:
             self.ticks += 1
+        
+        if self.rec.x <= -400:
+            self.xvelocity = 0
+            self.rec.x = -400
 
         # collision
-        if self.rec.x < 20:
-            self.xvelocity = 0
-            self.rec.x = 20
-        if self.rec.x > 1540:
-            self.xvelocity = 0
-            self.rec.x = 1540
         if self.rec.y > self.floorHeight:
             self.rec.y = self.floorHeight
 
@@ -46,7 +44,6 @@ class Player:
             self.yvelocity += 0.68
         if self.rec.y >= self.floorHeight:
             self.yvelocity = 0
-            self.hasJumped = False
 
         # controls
         if IsKeyDown(KEY_RIGHT):
@@ -62,13 +59,10 @@ class Player:
                     self.yvelocity = 4
                     self.stopIncrementingTickTimer = True
         
-        if IsKeyReleased(KEY_RIGHT) or IsKeyReleased(KEY_LEFT):
-            if self.tickTimer == 0:
-                self.xvelocity /= 5
-                self.tickTimer += 1
-            if self.tickTimer == 1:
-                self.tickTimer = 0
-                self.xvelocity = 0
+        if IsKeyReleased(KEY_RIGHT):
+            self.xvelocity = 0
+        if IsKeyReleased(KEY_LEFT):
+            self.xvelocity = 0
 
         if IsKeyReleased(KEY_SPACE):
             self.yvelocity = 4 
