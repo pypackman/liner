@@ -27,9 +27,9 @@ class Player:
         if self.frames % 6 == 0:
             self.ticks += 1
         
-        if self.rec.x <= -400:
+        if self.rec.x <= -800:
             self.xvelocity = 0
-            self.rec.x = -400
+            self.rec.x = -800
 
         # collision
         if self.rec.y > self.floorHeight:

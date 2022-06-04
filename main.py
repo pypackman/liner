@@ -2,7 +2,7 @@ from game import Game
 from sys import argv
 
 def main():
-    version = "0.2a2"
+    version = "alpha 0.2.3"
     print(version)
     if argv[1] == "game":
         G = Game(1600,900,60)

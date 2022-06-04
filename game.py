@@ -6,14 +6,13 @@ import time as t
 from character.player import Player
 
 class Game:
-    def __init__(self, w, h, f): 
-        m = MapIO()
+    def __init__(self, w, h,f): 
         self.width, self.height = w,h
-        self.fps = 60
+        self.fps = f
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms = m.getMapInfo("map.json")
+        self.platforms = MapIO().getMapInfo("map.json")
         self.title = b"wow liner"
     
     def CheckCollisionPlatforms(self, platform, player):
@@ -21,13 +20,15 @@ class Game:
             if player.rec.x < platform.rect.x + platform.rect.width and player.rec.x + player.rec.width > platform.rect.x:
                 player.floorHeight = platform.rect.y - player.rec.height
         else:
-            for plat in self.platforms:
-                if player.rec.x < plat.rect.x + plat.rect.width and player.rec.x + player.rec.width > plat.rect.x:
-                    player.floorHeight = plat.rect.y - player.rec.height                
+            for p in self.platforms:
+                if player.rec.x < p.rect.x + p.rect.width and player.rec.x + player.rec.width > p.rect.x:
+                    if p.rect.y > player.rec.y:
+                        player.floorHeight = p.rect.y - player.rec.height
     
     def main(self):
         InitWindow(self.width, self.height, self.title)
         SetTargetFPS(self.fps)
+        print(self.platforms)
         
         player = Player(60,60,40,100,p.GOLD)
         
