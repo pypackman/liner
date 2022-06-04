@@ -10,7 +10,7 @@ class Player:
         self.currentTime = int(t.time())
 
         self.ceilingHeight = 30
-        self.floorHeight = 2342
+        self.floorHeight = 1000
         self.frames = 0
         self.ticks = 0
         self.tickTimer = 0

@@ -1,5 +1,6 @@
 from raylib import *
 import pyray as p
+from sqlalchemy import true
 class Platform:
     def __init__(self, posx, posy, width, height, color):
         self.rect=p.Rectangle(posx,posy,width,height)
@@ -9,10 +10,7 @@ class Platform:
         DrawRectangleRec(self.rect, self.color)
     def Collision(self, player):
         if CheckCollisionRecs(self.rect, player.rec):
-            if player.rec.x < self.rect.x + self.rect.width and player.rec.x + player.rec.width > self.rect.x:
-                player.floorHeight = self.rect.y - player.rec.height
-
-        if not CheckCollisionRecs(self.rect, player.rec):
-            player.floorHeight = 800
-        return player
+            return True
+        elif not CheckCollisionRecs(self.rect,player.rec):
+            return False
         
