@@ -11,7 +11,11 @@ class Game:
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms = [Platform(-350,900,2750,400,p.LIGHTGRAY),Platform(200, 650, 150, 20, p.BLACK),Platform(450, 450, 150, 20, p.BLACK)]
+        self.platforms = [
+            Platform(-350, 800, 2800, 400,p.LIGHTGRAY),
+            Platform(200, 650, 150, 20, p.BLACK),
+            Platform(450, 450, 150, 20, p.BLACK)
+        ]
         self.title = b"wow liner"
     
     def CheckCollisionPlatforms(self, platform, player):
@@ -21,11 +25,8 @@ class Game:
         else:
             for plat in self.platforms:
                 if player.rec.x < plat.rect.x + plat.rect.width and player.rec.x + player.rec.width > plat.rect.x:
-                    if plat.rect.y - player.rec.height > player.rec.height:
-                        player.floorHeight = plat.rect.y - player.rec.height
-                        
+                    player.floorHeight = plat.rect.y - player.rec.height                
     
-        
     def main(self):
         InitWindow(self.width, self.height, self.title)
         SetTargetFPS(self.fps)
@@ -50,10 +51,11 @@ class Game:
             BeginDrawing()
             camera.target = player.rec.x+player.rec.width/2,player.rec.y+player.rec.width
             ClearBackground(p.RAYWHITE) 
-            DrawText(bytes(f"Ticks: {self.ticks}, TPS: {self.tps}",'utf-8'), 30, 32, 15, p.SKYBLUE)
+            DrawText(bytes(f"Ticks: {self.ticks}, TPS: {self.tps}",'utf-8'), 30, 32, 15 , p.SKYBLUE)
             DrawText(b"by easontek2398 and meowscripty", 30,52,15,p.BLUE)
             DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
-            DrawText(bytes(f"currentfloorheight: {round(player.floorHeight,1)}",'utf-8'), 30, 92, 15, p.GREEN)
+            DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
+            DrawText(bytes(f"currentfloorheight: {round(player.floorHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
             #cam
             BeginMode2D(camera)
 
