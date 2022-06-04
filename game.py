@@ -1,21 +1,19 @@
 from object.platform import Platform
 import pyray as p
 from raylib import *
+from gameio.mapio import MapIO
 import time as t
 from character.player import Player
 
 class Game:
     def __init__(self, w, h, f): 
+        m = MapIO()
         self.width, self.height = w,h
         self.fps = 60
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms = [
-            Platform(-350, 800, 2800, 400,p.LIGHTGRAY),
-            Platform(200, 650, 150, 20, p.BLACK),
-            Platform(450, 450, 150, 20, p.BLACK)
-        ]
+        self.platforms = m.getMapInfo("map.json")
         self.title = b"wow liner"
     
     def CheckCollisionPlatforms(self, platform, player):
