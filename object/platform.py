@@ -1,6 +1,5 @@
 from raylib import *
 import pyray as p
-from sqlalchemy import true
 class Platform:
     def __init__(self, posx, posy, width, height, color):
         self.rect=p.Rectangle(posx,posy,width,height)

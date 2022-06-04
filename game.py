@@ -2,7 +2,6 @@ from object.platform import Platform
 import pyray as p
 from raylib import *
 from gameio.mapio import MapIO
-import time as t
 from character.player import Player
 
 class Game:
@@ -12,8 +11,8 @@ class Game:
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms = MapIO().getMapInfo("map.json")
-        self.title = b"wow liner"
+        self.platforms = MapIO().getMapInfo("json/maps/map.json")
+        self.title = b"meow liner"
     
     def CheckCollisionPlatforms(self, platform, player):
         if platform.Collision(player):
