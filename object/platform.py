@@ -10,8 +10,8 @@ class Platform:
         self.color = color
     
     def Draw(self):
-        DrawRectangleRec(self.rect, self.color)
         self.ceilingHitbox.Draw()
+        DrawRectangleRec(self.rect, self.color)
     def Collision(self, player):
         if CheckCollisionRecs(self.rect, player.rec):
             return True

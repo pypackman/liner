@@ -32,13 +32,11 @@ class Game:
                     if p.rect.y > player.rec.y:
                         player.floorHeight = p.rect.y - player.rec.height
     def CheckCollisionPlatformCeilings(self,ceiling,player):
-        if ceiling.Collision(player):
-            if player.rec.x < ceiling.ceiling.x + ceiling.ceiling.width and player.rec.x + player.rec.width > ceiling.ceiling.x :
-                    player.ceilingHeight = ceiling.ceiling.y + ceiling.ceiling.height     
-        else:
-            for c in self.ceilings:
-                if player.rec.x < ceiling.ceiling.x + ceiling.ceiling.width and player.rec.x + player.rec.width > ceiling.ceiling.x:
-                    player.ceilingHeight = c.ceiling.y - c.ceiling.height
+        for c in self.ceilings:
+            if c.IsPlayerUnder(player):
+                player.ceilingHeight = c.ceiling.y + c.ceiling.height
+
+                        
     
     def main(self):
         InitWindow(self.width, self.height, self.title)
@@ -66,14 +64,15 @@ class Game:
                 player.Update()
                 for platform in self.platforms:
                     self.CheckCollisionPlatforms(platform, player)
-                for ceiling in self.ceilings:
-                   self.CheckCollisionPlatformCeilings(ceiling,player)
+                for c in self.ceilings:
+                    self.CheckCollisionPlatformCeilings(platform, player)
 
             BeginDrawing()
             if self.currentScreen == "title":
                 ClearBackground(self.palette['lightblue'])
-                DrawText(bytes(f"press [ENTER] to run game ", 'utf-8'), 30,30,40,self.palette['navy'])
-                DrawText(bytes(f"version {self.version}",'utf-8'), 30,80,20,self.palette['navy'])
+                DrawText(b"Welcome to Liner!", 30,35,30,self.palette['navy'])
+                DrawText(bytes(f"press [ENTER] to run game ", 'utf-8'), 30,75,40,self.palette['navy'])
+                DrawText(bytes(f"version {self.version}",'utf-8'), 30,115,20,self.palette['navy'])
 
             if self.currentScreen == "game":
                 camera.target = player.rec.x+player.rec.width/2,player.rec.y+player.rec.width

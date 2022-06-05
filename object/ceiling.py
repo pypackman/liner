@@ -8,8 +8,8 @@ class Ceiling:
         self.ceiling = p.Rectangle(x,y,w,h)
     def Draw(self):
         DrawRectangleRec(self.ceiling, self.palette['brickred'])
-    def Collision(self,player):
-        if CheckCollisionRecs(self.ceiling,player.rec):
-            return True
+    def IsPlayerUnder(self,player):
+        if player.rec.x < self.ceiling.x + self.ceiling.width and player.rec.x + player.rec.width > self.ceiling.x and player.rec.y > self.ceiling.y:
+            return True #player is under ceiling
         else:
             return False
