@@ -38,6 +38,7 @@ class Player:
         if self.rec.y < self.ceilingHeight:
             self.yvelocity = 0
             self.rec.y = self.ceilingHeight
+            self.tickTimer = 5
 
         # fall
         if self.rec.y <= self.floorHeight:
