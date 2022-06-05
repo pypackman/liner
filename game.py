@@ -31,7 +31,7 @@ class Game:
                 if player.rec.x < p.rect.x + p.rect.width and player.rec.x + player.rec.width > p.rect.x:
                     if p.rect.y > player.rec.y:
                         player.floorHeight = p.rect.y - player.rec.height
-    def CheckCollisionPlatformCeilings(self,ceiling,player):
+    def CheckCollisionPlatformCeilings(self,player):
         for c in self.ceilings:
             if c.IsPlayerUnder(player):
                 player.ceilingHeight = c.ceiling.y + c.ceiling.height
@@ -63,9 +63,8 @@ class Game:
             if self.currentScreen == "game":
                 player.Update()
                 for platform in self.platforms:
-                    self.CheckCollisionPlatforms(platform, player)
-                for c in self.ceilings:
-                    self.CheckCollisionPlatformCeilings(platform, player)
+                    self.CheckCollisionPlatforms(platform, player)    
+                self.CheckCollisionPlatformCeilings(player)
 
             BeginDrawing()
             if self.currentScreen == "title":

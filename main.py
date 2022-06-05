@@ -3,7 +3,7 @@ from sys import argv
 from palettedemo import ColorPaletteDemo
 
 def main():
-    version = "alpha 0.3.1.1"
+    version = "alpha 0.3.2"
     print("\n"+version)
     if argv[1] == "start":
         G = Game(1600,900,60,version)
@@ -12,9 +12,7 @@ def main():
         except KeyboardInterrupt: 
              print("exit with esc") 
     elif argv[1] == "palette":
-         ColorPaletteDemo().demo()
-
-    
+         ColorPaletteDemo().demo()    
 
 if __name__ == "__main__": 
     main()

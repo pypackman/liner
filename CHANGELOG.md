@@ -2,6 +2,11 @@
 
 **versions prior to alpha 0.2.3 not listed.**
 
+## alpha 0.3.2:
+  * begin to implement walls
+  * add `__main__.py` to support running as a zip file
+  * overall cleanup
+
 ### alpha 0.3.1.1:
   * better implement title screen
   * fully working ceilings
