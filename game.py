@@ -1,5 +1,4 @@
 from tkinter import Y
-from object.ceiling import Ceiling
 import pyray as p
 from raylib import *
 from gameio.dataio import DataIO
@@ -15,7 +14,7 @@ class Game:
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms = MapIO().getMapInfo("json/maps/map.json")
+        self.platforms, self.walls = MapIO().getMapInfo("json/maps/map.json")
         self.ceilings = []
         self.title = b"liner"
         self.palette = DataIO().retrievePalette()
@@ -42,8 +41,10 @@ class Game:
         InitWindow(self.width, self.height, self.title)
         SetTargetFPS(self.fps)
         print(self.platforms)
-        
-        player = Player(60,60,40,100,p.GOLD)
+
+
+        playerTexture = LoadTexture(b'testTexture.png')
+        player = Player(60,60,40,100,self.palette['lightblue'])
         
         camera = p.Camera2D()
         camera.offset = self.width/2, self.height/2
@@ -65,6 +66,8 @@ class Game:
                 for platform in self.platforms:
                     self.CheckCollisionPlatforms(platform, player)    
                 self.CheckCollisionPlatformCeilings(player)
+                for wall in self.walls:
+                    wall.Collision(player)
 
             BeginDrawing()
             if self.currentScreen == "title":
@@ -76,11 +79,6 @@ class Game:
             if self.currentScreen == "game":
                 camera.target = player.rec.x+player.rec.width/2,player.rec.y+player.rec.width
                 ClearBackground(p.RAYWHITE) 
-                DrawText(bytes(f"Ticks: {self.ticks}, TPS: {self.tps}",'utf-8'), 30, 32, 15 , p.SKYBLUE)
-                DrawText(b"by easontek2398 and meowscripty", 30,52,15,p.BLUE)
-                DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
-                DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
-                DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
                 #cam
                 BeginMode2D(camera)
 
@@ -89,7 +87,14 @@ class Game:
                 self.ceilings[0].Draw()
                 for platform in self.platforms:
                     platform.Draw()
+                for wall in self.walls:
+                    wall.Draw()
                 EndMode2D()
+                DrawText(bytes(f"Ticks: {self.ticks}, TPS: {self.tps}",'utf-8'), 30, 32, 15 , p.SKYBLUE)
+                DrawText(b"by easontek2398 and meowscripty", 30,52,15,p.BLUE)
+                DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
+                DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
+                DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
             #endcam
             EndDrawing()
  

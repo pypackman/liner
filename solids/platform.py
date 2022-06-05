@@ -1,4 +1,4 @@
-from object.ceiling import Ceiling
+from solids import ceiling,wall
 from gameio.dataio import DataIO
 from raylib import *
 import pyray as p
@@ -6,7 +6,7 @@ class Platform:
     def __init__(self, posx, posy, width, height, color):
         self.palette = DataIO().retrievePalette()
         self.rect=p.Rectangle(posx,posy,width,height)
-        self.ceilingHitbox = Ceiling(posx,posy+height/2,width,height/2)
+        self.ceilingHitbox = ceiling.Ceiling(posx,posy+height/2,width,height/2)
         self.color = color
     
     def Draw(self):

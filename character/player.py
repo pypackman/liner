@@ -38,7 +38,7 @@ class Player:
         if self.rec.y < self.ceilingHeight:
             self.yvelocity = 0
             self.rec.y = self.ceilingHeight
-            self.tickTimer = 5
+            self.tickTimer = 3
 
         # fall
         if self.rec.y <= self.floorHeight:
@@ -54,9 +54,9 @@ class Player:
         if IsKeyDown(KEY_SPACE):
                 if self.frames % 6 == 0 and self.stopIncrementingTickTimer == False:
                     self.tickTimer += 1
-                if self.tickTimer < 4:
+                if self.tickTimer < 3:
                     self.yvelocity -= 1.5
-                elif self.tickTimer > 5 and self.rec.y > 795:
+                elif self.tickTimer > 4 and self.rec.y > 795:
                     self.yvelocity = 4
                     self.stopIncrementingTickTimer = True
         

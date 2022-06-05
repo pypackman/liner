@@ -2,6 +2,9 @@
 
 **versions prior to alpha 0.2.3 not listed.**
 
+## alpha 0.4:
+  * revamp mapio and the mapfile
+  * fully implement walls
 ## alpha 0.3.2:
   * begin to implement walls
   * add `__main__.py` to support running as a zip file
