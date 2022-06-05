@@ -1,4 +1,3 @@
-from tkinter import Y
 import pyray as p
 from raylib import *
 from gameio.dataio import DataIO
@@ -96,5 +95,4 @@ class Game:
                 DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
                 DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
             #endcam
-            EndDrawing()
- 
+            EndDrawing() 
