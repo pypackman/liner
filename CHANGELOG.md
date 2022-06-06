@@ -2,6 +2,10 @@
 
 **versions prior to alpha 0.2.3 not listed.**
 
+## alpha 0.4.1:
+  * correctly implement walls on sides of platform to prevent clipping
+  * begin to implement multiple types of platforms
+  * overall cleanup
 ## alpha 0.4:
   * revamp mapio and the mapfile
   * fully implement walls

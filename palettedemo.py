@@ -1,10 +1,10 @@
 from raylib import *
 import pyray as p
-from gameio.mapio import MapIO
+from gameio.dataio import DataIO
 
 class ColorPaletteDemo:
     def __init__(self) -> None:
-        self.palette = MapIO().retrievePalette()
+        self.palette = DataIO().retrievePalette()
     def demo(self):
         width,height = 1600,150
         InitWindow(width,height,b"liner palette demo")

@@ -3,7 +3,7 @@ from sys import argv
 from palettedemo import ColorPaletteDemo
 
 def main():
-    version = "alpha 0.4"
+    version = "alpha 0.4.1"
     print("\n"+version)
     if argv[1] == "start":
         G = Game(1600,900,60,version)

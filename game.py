@@ -2,6 +2,8 @@ import pyray as p
 from raylib import *
 from gameio.dataio import DataIO
 from gameio.mapio import MapIO
+from time import sleep
+from solids import ceiling
 from character.player import Player
 
 class Game:
@@ -14,7 +16,7 @@ class Game:
         self.ticks = 0
         self.tps = 10
         self.platforms, self.walls = MapIO().getMapInfo("json/maps/map.json")
-        self.ceilings = []
+        self.ceilings = [ceiling.Ceiling(-800,30,30000,10)]
         self.title = b"liner"
         self.palette = DataIO().retrievePalette()
         for platform in self.platforms:
@@ -63,7 +65,8 @@ class Game:
             if self.currentScreen == "game":
                 player.Update()
                 for platform in self.platforms:
-                    self.CheckCollisionPlatforms(platform, player)    
+                    self.CheckCollisionPlatforms(platform, player)  
+                    platform.WallCollision(player)  
                 self.CheckCollisionPlatformCeilings(player)
                 for wall in self.walls:
                     wall.Collision(player)
@@ -80,8 +83,6 @@ class Game:
                 ClearBackground(p.RAYWHITE) 
                 #cam
                 BeginMode2D(camera)
-
-                DrawRectangle(234,356,23,23,p.RED)
                 player.Draw()
                 self.ceilings[0].Draw()
                 for platform in self.platforms:
@@ -96,3 +97,4 @@ class Game:
                 DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
             #endcam
             EndDrawing() 
+            #sleep(0.15)

@@ -1,7 +1,8 @@
 import json
 import platform
-from solids import platform,wall
+from solids import wall
 from gameio.dataio import DataIO
+from solids.platforms import platform
 class MapIO:
     def __init__(self) -> None:
         self.finalPlatList = []
