@@ -5,9 +5,9 @@ from gameio.mapio import MapIO
 from time import sleep
 from solids import ceiling
 from character.player import Player
-
-class Game:
-    def __init__(self, w, h,f, v): 
+from character.health import healthcounter
+class Game(healthcounter):
+    def __init__(self, w, h,f, v,): 
         self.currentScreen = "title"
         self.version = v
         self.width, self.height = w,h
@@ -19,6 +19,7 @@ class Game:
         self.ceilings = [ceiling.Ceiling(-800,30,30000,10)]
         self.title = b"liner"
         self.palette = DataIO().retrievePalette()
+        
         for platform in self.platforms:
             self.ceilings.append(platform.ceilingHitbox)
     
@@ -95,6 +96,7 @@ class Game:
                 DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
                 DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
                 DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
+                Drawtext(bytes(f"health:"{self.health}))
             #endcam
             EndDrawing() 
             #sleep(0.15)
