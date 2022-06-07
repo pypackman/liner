@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EC4EF828284F674E00DE3285 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF827284F674E00DE3285 /* main.swift */; };
+		EC4EF830284F679500DE3285 /* Raylib in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EF82F284F679500DE3285 /* Raylib */; };
+		EC4EF832284F67BB00DE3285 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF831284F67BB00DE3285 /* game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,7 @@
 /* Begin PBXFileReference section */
 		EC4EF824284F674E00DE3285 /* liner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = liner; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4EF827284F674E00DE3285 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC4EF831284F67BB00DE3285 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4EF830284F679500DE3285 /* Raylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +45,7 @@
 		EC4EF81B284F674E00DE3285 = {
 			isa = PBXGroup;
 			children = (
+				EC4EF831284F67BB00DE3285 /* game.swift */,
 				EC4EF826284F674E00DE3285 /* liner */,
 				EC4EF825284F674E00DE3285 /* Products */,
 			);
@@ -78,6 +83,9 @@
 			dependencies = (
 			);
 			name = liner;
+			packageProductDependencies = (
+				EC4EF82F284F679500DE3285 /* Raylib */,
+			);
 			productName = liner;
 			productReference = EC4EF824284F674E00DE3285 /* liner */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +114,9 @@
 				Base,
 			);
 			mainGroup = EC4EF81B284F674E00DE3285;
+			packageReferences = (
+				EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */,
+			);
 			productRefGroup = EC4EF825284F674E00DE3285 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4EF828284F674E00DE3285 /* main.swift in Sources */,
+				EC4EF832284F67BB00DE3285 /* game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +296,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/STREGAsGate/Raylib.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC4EF82F284F679500DE3285 /* Raylib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */;
+			productName = Raylib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC4EF81C284F674E00DE3285 /* Project object */;
 }

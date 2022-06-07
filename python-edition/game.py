@@ -96,7 +96,7 @@ class Game(healthcounter):
                 DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
                 DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
                 DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
-                Drawtext(bytes(f"health:"{self.health}))
+                DrawText(bytes(f"health: {self.health}", "utf-8"),1500,32,30,self.palette['lightgreen'])
             #endcam
             EndDrawing() 
             #sleep(0.15)

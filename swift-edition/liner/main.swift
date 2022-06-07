@@ -9,3 +9,5 @@ import Foundation
 
 print("Hello, World!")
 
+var g = Game(1600,900,60)
+g.main()
