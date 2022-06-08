@@ -7,5 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
+var g = Game(DisplayWidth: 1600,DisplayHeight: 900, FPSClock: 60)
+g.main()
 
