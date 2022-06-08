@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC4EF828284F674E00DE3285 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF827284F674E00DE3285 /* main.swift */; };
-		EC4EF830284F679500DE3285 /* Raylib in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EF82F284F679500DE3285 /* Raylib */; };
-		EC4EF832284F67BB00DE3285 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF831284F67BB00DE3285 /* game.swift */; };
+		EC4EF84028502A4C00DE3285 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF83F28502A4C00DE3285 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EC4EF822284F674E00DE3285 /* CopyFiles */ = {
+		EC4EF83A28502A4C00DE3285 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,87 +23,81 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC4EF824284F674E00DE3285 /* liner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = liner; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC4EF827284F674E00DE3285 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		EC4EF831284F67BB00DE3285 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
+		EC4EF83C28502A4C00DE3285 /* liner-swift-edition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "liner-swift-edition"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4EF83F28502A4C00DE3285 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EC4EF821284F674E00DE3285 /* Frameworks */ = {
+		EC4EF83928502A4C00DE3285 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4EF830284F679500DE3285 /* Raylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC4EF81B284F674E00DE3285 = {
+		EC4EF83328502A4C00DE3285 = {
 			isa = PBXGroup;
 			children = (
-				EC4EF831284F67BB00DE3285 /* game.swift */,
-				EC4EF826284F674E00DE3285 /* liner */,
-				EC4EF825284F674E00DE3285 /* Products */,
+				EC4EF83E28502A4C00DE3285 /* liner-swift-edition */,
+				EC4EF83D28502A4C00DE3285 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EC4EF825284F674E00DE3285 /* Products */ = {
+		EC4EF83D28502A4C00DE3285 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC4EF824284F674E00DE3285 /* liner */,
+				EC4EF83C28502A4C00DE3285 /* liner-swift-edition */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC4EF826284F674E00DE3285 /* liner */ = {
+		EC4EF83E28502A4C00DE3285 /* liner-swift-edition */ = {
 			isa = PBXGroup;
 			children = (
-				EC4EF827284F674E00DE3285 /* main.swift */,
+				EC4EF83F28502A4C00DE3285 /* main.swift */,
 			);
-			path = liner;
+			path = "liner-swift-edition";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC4EF823284F674E00DE3285 /* liner */ = {
+		EC4EF83B28502A4C00DE3285 /* liner-swift-edition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC4EF82B284F674E00DE3285 /* Build configuration list for PBXNativeTarget "liner" */;
+			buildConfigurationList = EC4EF84328502A4C00DE3285 /* Build configuration list for PBXNativeTarget "liner-swift-edition" */;
 			buildPhases = (
-				EC4EF820284F674E00DE3285 /* Sources */,
-				EC4EF821284F674E00DE3285 /* Frameworks */,
-				EC4EF822284F674E00DE3285 /* CopyFiles */,
+				EC4EF83828502A4C00DE3285 /* Sources */,
+				EC4EF83928502A4C00DE3285 /* Frameworks */,
+				EC4EF83A28502A4C00DE3285 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = liner;
-			packageProductDependencies = (
-				EC4EF82F284F679500DE3285 /* Raylib */,
-			);
-			productName = liner;
-			productReference = EC4EF824284F674E00DE3285 /* liner */;
+			name = "liner-swift-edition";
+			productName = "liner-swift-edition";
+			productReference = EC4EF83C28502A4C00DE3285 /* liner-swift-edition */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EC4EF81C284F674E00DE3285 /* Project object */ = {
+		EC4EF83428502A4C00DE3285 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					EC4EF823284F674E00DE3285 = {
+					EC4EF83B28502A4C00DE3285 = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = EC4EF81F284F674E00DE3285 /* Build configuration list for PBXProject "liner" */;
+			buildConfigurationList = EC4EF83728502A4C00DE3285 /* Build configuration list for PBXProject "liner-swift-edition" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,33 +105,29 @@
 				en,
 				Base,
 			);
-			mainGroup = EC4EF81B284F674E00DE3285;
-			packageReferences = (
-				EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */,
-			);
-			productRefGroup = EC4EF825284F674E00DE3285 /* Products */;
+			mainGroup = EC4EF83328502A4C00DE3285;
+			productRefGroup = EC4EF83D28502A4C00DE3285 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC4EF823284F674E00DE3285 /* liner */,
+				EC4EF83B28502A4C00DE3285 /* liner-swift-edition */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC4EF820284F674E00DE3285 /* Sources */ = {
+		EC4EF83828502A4C00DE3285 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4EF828284F674E00DE3285 /* main.swift in Sources */,
-				EC4EF832284F67BB00DE3285 /* game.swift in Sources */,
+				EC4EF84028502A4C00DE3285 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EC4EF829284F674E00DE3285 /* Debug */ = {
+		EC4EF84128502A4C00DE3285 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -199,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		EC4EF82A284F674E00DE3285 /* Release */ = {
+		EC4EF84228502A4C00DE3285 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +240,7 @@
 			};
 			name = Release;
 		};
-		EC4EF82C284F674E00DE3285 /* Debug */ = {
+		EC4EF84428502A4C00DE3285 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -263,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		EC4EF82D284F674E00DE3285 /* Release */ = {
+		EC4EF84528502A4C00DE3285 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -277,44 +265,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC4EF81F284F674E00DE3285 /* Build configuration list for PBXProject "liner" */ = {
+		EC4EF83728502A4C00DE3285 /* Build configuration list for PBXProject "liner-swift-edition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC4EF829284F674E00DE3285 /* Debug */,
-				EC4EF82A284F674E00DE3285 /* Release */,
+				EC4EF84128502A4C00DE3285 /* Debug */,
+				EC4EF84228502A4C00DE3285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC4EF82B284F674E00DE3285 /* Build configuration list for PBXNativeTarget "liner" */ = {
+		EC4EF84328502A4C00DE3285 /* Build configuration list for PBXNativeTarget "liner-swift-edition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC4EF82C284F674E00DE3285 /* Debug */,
-				EC4EF82D284F674E00DE3285 /* Release */,
+				EC4EF84428502A4C00DE3285 /* Debug */,
+				EC4EF84528502A4C00DE3285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/STREGAsGate/Raylib.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EC4EF82F284F679500DE3285 /* Raylib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC4EF82E284F679500DE3285 /* XCRemoteSwiftPackageReference "Raylib" */;
-			productName = Raylib;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = EC4EF81C284F674E00DE3285 /* Project object */;
+	rootObject = EC4EF83428502A4C00DE3285 /* Project object */;
 }
