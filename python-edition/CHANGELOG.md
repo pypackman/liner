@@ -2,6 +2,11 @@
 
 **versions prior to alpha 0.2.3 not listed.**
 
+## alpha 0.5:
+  * added graphical game launcher written in tkinter
+  * organisational changes
+  * begin to implement unstable platforms
+  * planned to add settings
 ## alpha 0.4.1:
   * correctly implement walls on sides of platform to prevent clipping
   * begin to implement multiple types of platforms

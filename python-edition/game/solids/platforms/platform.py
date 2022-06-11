@@ -1,5 +1,5 @@
-from solids import ceiling,wall
-from gameio.dataio import DataIO
+from game.solids import ceiling,wall
+from game.gameio.dataio import DataIO
 from raylib import *
 import pyray as p
 class Platform:

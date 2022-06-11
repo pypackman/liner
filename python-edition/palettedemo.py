@@ -1,6 +1,6 @@
 from raylib import *
 import pyray as p
-from gameio.dataio import DataIO
+from game.gameio.dataio import DataIO
 
 class ColorPaletteDemo:
     def __init__(self) -> None:

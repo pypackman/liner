@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC168F562851AA8500EFA0AB /* mapio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC168F552851AA8500EFA0AB /* mapio.swift */; };
 		EC4EF84028502A4C00DE3285 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF83F28502A4C00DE3285 /* main.swift */; };
 		EC4EF84728502A6D00DE3285 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF84628502A6D00DE3285 /* game.swift */; };
 		EC4EF84A28502ACC00DE3285 /* Raylib in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EF84928502ACC00DE3285 /* Raylib */; };
 		EC4EF84D2850306C00DE3285 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF84C2850306C00DE3285 /* player.swift */; };
+		EC4EF850285047F700DE3285 /* platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF84F285047F700DE3285 /* platform.swift */; };
+		EC4EF852285052B800DE3285 /* ceiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4EF851285052B800DE3285 /* ceiling.swift */; };
+		ECE1E87D2852F67C0050B91D /* dataio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE1E87C2852F67C0050B91D /* dataio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +30,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC168F552851AA8500EFA0AB /* mapio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapio.swift; sourceTree = "<group>"; };
 		EC4EF83C28502A4C00DE3285 /* liner-swift-edition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "liner-swift-edition"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4EF83F28502A4C00DE3285 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC4EF84628502A6D00DE3285 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		EC4EF84C2850306C00DE3285 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = player.swift; sourceTree = "<group>"; };
+		EC4EF84F285047F700DE3285 /* platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = platform.swift; sourceTree = "<group>"; };
+		EC4EF851285052B800DE3285 /* ceiling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ceiling.swift; sourceTree = "<group>"; };
+		ECE1E87C2852F67C0050B91D /* dataio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC168F522851AA6300EFA0AB /* gameio */ = {
+			isa = PBXGroup;
+			children = (
+				EC168F552851AA8500EFA0AB /* mapio.swift */,
+				ECE1E87C2852F67C0050B91D /* dataio.swift */,
+			);
+			path = gameio;
+			sourceTree = "<group>";
+		};
 		EC4EF83328502A4C00DE3285 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +80,8 @@
 		EC4EF83E28502A4C00DE3285 /* liner-swift-edition */ = {
 			isa = PBXGroup;
 			children = (
+				EC168F522851AA6300EFA0AB /* gameio */,
+				EC4EF84E285047AB00DE3285 /* solids */,
 				EC4EF84B2850305100DE3285 /* character */,
 				EC4EF83F28502A4C00DE3285 /* main.swift */,
 				EC4EF84628502A6D00DE3285 /* game.swift */,
@@ -76,6 +95,15 @@
 				EC4EF84C2850306C00DE3285 /* player.swift */,
 			);
 			path = character;
+			sourceTree = "<group>";
+		};
+		EC4EF84E285047AB00DE3285 /* solids */ = {
+			isa = PBXGroup;
+			children = (
+				EC4EF84F285047F700DE3285 /* platform.swift */,
+				EC4EF851285052B800DE3285 /* ceiling.swift */,
+			);
+			path = solids;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4EF84028502A4C00DE3285 /* main.swift in Sources */,
+				EC4EF850285047F700DE3285 /* platform.swift in Sources */,
 				EC4EF84D2850306C00DE3285 /* player.swift in Sources */,
 				EC4EF84728502A6D00DE3285 /* game.swift in Sources */,
+				EC4EF852285052B800DE3285 /* ceiling.swift in Sources */,
+				ECE1E87D2852F67C0050B91D /* dataio.swift in Sources */,
+				EC168F562851AA8500EFA0AB /* mapio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SED69PSTK5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -281,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SED69PSTK5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

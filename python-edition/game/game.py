@@ -1,13 +1,11 @@
 import pyray as p
 from raylib import *
-from gameio.dataio import DataIO
-from gameio.mapio import MapIO
-from time import sleep
-from solids import ceiling
-from character.player import Player
-from character.health import healthcounter
-class Game(healthcounter):
-    def __init__(self, w, h,f, v,): 
+from game.gameio.dataio import DataIO
+from game.gameio.mapio import MapIO
+from game.solids import ceiling
+from game.character.player import Player
+class Game():
+    def __init__(self, w, h,f, v): 
         self.currentScreen = "title"
         self.version = v
         self.width, self.height = w,h
@@ -15,7 +13,7 @@ class Game(healthcounter):
         self.frames = 0
         self.ticks = 0
         self.tps = 10
-        self.platforms, self.walls = MapIO().getMapInfo("json/maps/map.json")
+        self.platforms, self.walls = MapIO().getMapInfo("game/json/maps/map.json")
         self.ceilings = [ceiling.Ceiling(-800,30,30000,10)]
         self.title = b"liner"
         self.palette = DataIO().retrievePalette()
@@ -71,6 +69,8 @@ class Game(healthcounter):
                 self.CheckCollisionPlatformCeilings(player)
                 for wall in self.walls:
                     wall.Collision(player)
+                if IsKeyDown(KEY_ESCAPE):
+                    pass
 
             BeginDrawing()
             if self.currentScreen == "title":
@@ -96,7 +96,6 @@ class Game(healthcounter):
                 DrawText(bytes(f"x: {round(player.rec.x,2)}, y: {round(player.rec.y,2)}",'utf-8'), 30, 72, 15, p.RED)
                 DrawText(bytes(f"xvelocity: {round(player.xvelocity,2)}, yvelocity: {round(player.yvelocity,2)}",'utf-8'), 30, 92, 15, p.PINK)
                 DrawText(bytes(f"currentceilingheight: {round(player.ceilingHeight,1)}, jumpticktimer: {player.tickTimer}",'utf-8'), 30, 112, 15, p.GREEN)
-                DrawText(bytes(f"health: {self.health}", "utf-8"),1500,32,30,self.palette['lightgreen'])
             #endcam
             EndDrawing() 
             #sleep(0.15)

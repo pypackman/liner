@@ -1,6 +1,6 @@
 import pyray as p
 from raylib import *
-from gameio.dataio import DataIO
+from game.gameio.dataio import DataIO
 class Wall:
     def __init__(self,posx,posy,width,height,color)->None:
         self.palette = DataIO().retrievePalette()

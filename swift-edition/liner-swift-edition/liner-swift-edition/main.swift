@@ -6,7 +6,5 @@
 //
 
 import Foundation
-
-var g = Game(DisplayWidth: 1600,DisplayHeight: 900, FPSClock: 60)
+var g = Game(DisplayWidth: 1152,DisplayHeight: 648, FPSClock: 60)
 g.main()
-
