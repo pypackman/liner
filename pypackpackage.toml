@@ -1,0 +1,3 @@
+[package]
+path = "python-edition-latest.zip"
+version = 0.5
