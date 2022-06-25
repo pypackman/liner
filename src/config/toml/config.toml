@@ -1,0 +1,15 @@
+# config main section
+debug_enable = true
+show_meow_in_credits = true
+screen_width = 1600
+screen_height = 900
+title = "wow liner"
+fps_clock = 60
+show_ticks = true
+show_position = true
+camera_zoom =  1.1
+
+[controls]
+move_forward = 262 # key right
+move_backward = 263 # key right
+jump = 32 # space

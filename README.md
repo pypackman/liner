@@ -1,11 +1,10 @@
 # liner
 a 2d platformer game written in python and raylib(pyray and raylib-python)
 
-swift edition is written in swift and the swift binding of raylib (swift 5.6 syntax)
+CPython >3.10 needs raylib==4.0.1.0dev0 or above. please install that instead of raylib=4.0.0.6 in pip.
 
-**Note: pypy3 is recommended for development. please install raylib via your chosen runtime and pip.**
-**PyPy 3.9.12 is used for development**
+### installing dependencies:
 
-CPython >3.10 needs raylib=4.0.1.0dev0 or above. please install that instead of raylib=4.0.0.6 in pip.
+`python3 -m pip install raylib==4.2.0.0dev1 toml`
 
-**Xcode 14 (swift 5.7) is used for development for the Swift edition. Builds done on an M1 MacBook Pro.**
+**major rewrite underway.**
