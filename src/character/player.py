@@ -11,11 +11,11 @@ class Player:
         self.controlset = loadConfig()['controls']
 
         self.frames = 0
-        self.fallSpeed = 3.5
+        self.fallSpeed = 30
         self.ticks = 0
         self.jumpTickTimer = 0
         self.stopIncrementingJumpTickTimer = False
-        self.floorHeight = 900
+        self.floorHeight = 1000
 
     def draw(self):
         DrawRectangleRec(self.rect, self.color)
@@ -33,16 +33,21 @@ class Player:
         if IsKeyDown(self.controlset['jump']):
             if self.frames % 6 == 0 and self.stopIncrementingJumpTickTimer is False:
                 self.jumpTickTimer += 1
-            if self.jumpTickTimer < 3:
-                self.velocity.y -= 1.5
+            if self.jumpTickTimer <= 3:
+                self.velocity.y -= 1.7
             elif self.jumpTickTimer > 4 and self.rect.y > self.floorHeight - 5:
                 self.yvelocity = self.fallSpeed
-                self.stopIncrementingJumpTickTimer = False
+                self.stopIncrementingJumpTickTimer = True
 
-
+        if IsKeyReleased(self.controlset['jump']):
+            self.yvelocity = 0
+            self.jumpTickTimer = 0
+            self.stopIncrementingJumpTickTimer = False
 
         self.rect.x += self.velocity.x 
         self.rect.y += self.velocity.y
+
+        
 
 
     def update(self):
@@ -51,8 +56,8 @@ class Player:
             self.ticks += 1
         if self.rect.y < self.floorHeight:
             self.velocity.y += 1
-        elif self.rect.y >= self.floorHeight:
+        elif self.rect.y > self.floorHeight:
             self.velocity.y = 0
+            self.rect.y = self.floorHeight
         
-
         self.controls()
